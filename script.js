@@ -156,7 +156,7 @@ const quizQuestions = [
     },
     {
         question: "Tanggal berapa cerita kita resmi menjadi ‘kita’?",
-        options: ["8 Januari 2005", "4 September 2005", "28 Agustus 2025", "1 September 2026"],
+        options: ["8 Januari 2005", "4 September 2005", "28 Agustus 2025", "4 September 2030"],
         answerIndex: 2, // C
         feedbackCorrect: "Tanggal spesial yang akan selalu ada tempatnya di hati aku ✨",
         feedbackWrong: "Masa tanggal jadian kita lupa sayanggg? 😭 28 Agustus!"
