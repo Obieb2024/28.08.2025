@@ -142,7 +142,7 @@ function handleImageFallback(imgElement, fallbackTextTitle) {
 const quizQuestions = [
     {
         question: "Kita pertama kali saling kenal di mana?",
-        options: ["Timbel", "Kepanitiaan PKKMB", "Curug Cibareubeuy", "Perpustakaan"],
+        options: [" Waarung Timbel", "Kepanitiaan PKKMB", "Curug Cibareubeuy", "Kodim"],
         answerIndex: 1, // B
         feedbackCorrect: "Ternyata kamu masih ingat betul cerita awal kenal kita 💜",
         feedbackWrong: "Nggak apa-apa sayang. Yang penting kita punya banyak cerita manis berdua."
@@ -163,14 +163,14 @@ const quizQuestions = [
     },
     {
         question: "Tempat yang menjadi salah satu bagian dari cerita kenangan kita?",
-        options: ["Timbel di samping perpustakaan Subang", "Mall besar", "Bioskop", "Stasiun kereta"],
+        options: ["Timbel di samping perpustakaan Subang", "Bansus", "Nasi Goreng Mas Wito", "Warjo"],
         answerIndex: 0, // A
         feedbackCorrect: "Tempat sederhana tapi penuh kenangan indah berdua.",
         feedbackWrong: "Jawabannya Timbel sayanggg 🍚"
     },
     {
         question: "Aktivitas paling random tapi seru kalau dilakukan berdua?",
-        options: ["Gibahin orang sambil naik motor", "Belajar bareng", "Jogging pagi", "Membaca buku"],
+        options: ["Gibahin orang sambil naik motor", "Masak Bareng", "Jogging pagi", "Joget Joget"],
         answerIndex: 0, // A
         feedbackCorrect: "HAHAHA bener banget! Receh tapi paling ngangenin.",
         feedbackWrong: "Kayaknya yang A deh lebih sering 😭"
@@ -389,11 +389,11 @@ function showQuizResult() {
 
         const msgEl = document.getElementById('score-message');
         if (score >= 70) {
-            msgEl.innerText = "Luar biasa! Kamu memang soulmate Obieb yang luar biasa 💜";
+            msgEl.innerText = "Luar biasa! Kamu memang soulmate Obieb yang luar biasa 💜. Kirim SS nya ke aku sayanggg";
         } else if (score >= 40) {
-            msgEl.innerText = "Ternyata kamu masih hafal banyak cerita kenangan manis kita.";
+            msgEl.innerText = "Ternyata kamu masih hafal banyak cerita kenangan manis kita. Kirim SS nya ke aku sayanggg";
         } else {
-            msgEl.innerText = "Nggak apa-apa sayang, yang penting kita buat lebih banyak kenangan baru berdua 💜";
+            msgEl.innerText = "Nggak apa-apa sayang, yang penting kita buat lebih banyak kenangan baru berdua 💜. Kirim SS nya ke aku sayanggg";
         }
     }, 1500);
 }
