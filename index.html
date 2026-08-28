@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>28.08.2026 — Seberapa Kenal Kamu Dengan Kita?</title>
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dynamic Ambient Background Glows & Particles -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+    <div id="particles-container" class="particles-container"></div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast-notification"></div>
+
+    <!-- Quiz Answer Feedback Modal -->
+    <div id="quiz-modal" class="modal-overlay">
+        <div class="modal-box glass-modal">
+            <div class="modal-glow-sparkle"></div>
+            <div id="quiz-modal-icon" class="modal-icon">💜</div>
+            <h2 id="quiz-modal-title" class="heading-font modal-title"></h2>
+            <p id="quiz-modal-text" class="modal-body"></p>
+            <button id="quiz-modal-btn" class="primary-button btn-glow w-full mt-4">
+                Lanjut <span class="arrow">&rarr;</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal" class="lightbox-overlay" onclick="closeImageModal()">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <div class="lightbox-content glass-lightbox">
+            <div class="lightbox-img-wrapper">
+                <img id="modal-img" src="" alt="Kenangan kita" class="lightbox-img">
+            </div>
+            <p id="modal-caption" class="lightbox-caption heading-font"></p>
+        </div>
+    </div>
+
+    <!-- MAIN APPLICATION FRAMEWORK -->
+    <main id="app">
+        <!-- 1. HERO / OPENING -->
+        <section id="opening" class="section fullscreen active">
+            <div class="hero-bg-overlay"></div>
+            <div class="container text-center hero-wrapper">
+                <div class="hero-badge-wrapper seq-hero">
+                    <div id="secret-date-trigger" class="eyebrow date-pill-badge" title="Klik 3x untuk Pengaturan Foto Tersembunyi">
+                        <span class="sparkle-icon">✨</span> 28.08.2026 <span class="sparkle-icon">✨</span>
+                    </div>
+                </div>
+                
+                <h1 class="hero-title heading-font seq-hero">
+                    Seberapa Kenal<br>
+                    <span class="gradient-text">Kamu Dengan Kita?</span>
+                </h1>
+                
+                <p class="body-text seq-hero hero-subtitle">
+                    Sebuah perjalanan sinematik kecil<br>untuk merayakan cerita besar yang telah kita lewati.
+                </p>
+                
+                <div class="hero-author-card seq-hero">
+                    <span class="heart-avatar">💜</span>
+                    <div>
+                        <p class="author-label">Spesial Untuk Sayangggg,</p>
+                        <p class="author-name">Dari Obieb</p>
+                    </div>
+                </div>
+                
+                <div class="seq-hero mt-5">
+                    <button class="primary-button btn-primary btn-glow" onclick="nextSection('story-timeline')">
+                        <span>Mulai Perjalanan</span> <span class="arrow">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. TIMELINE / STORY JOURNEY -->
+        <section id="story-timeline" class="section">
+            <div class="container">
+                <div class="section-header text-center reveal mb-6">
+                    <span class="eyebrow-tag">CHAPTER 01</span>
+                    <h2 class="section-heading heading-font"><span class="gradient-text">Awal Mula & Perjalanan</span></h2>
+                    <p class="body-text text-muted">Jejak langkah yang mengantarkan kita sampai di sini.</p>
+                </div>
+
+                <div class="timeline-stepper">
+                    <!-- Story 01 -->
+                    <div class="story-block reveal glass-card timeline-card">
+                        <div class="card-badge">01 &mdash; AWAL MULA</div>
+                        <h3 class="story-title heading-font">PKKMB</h3>
+                        <p class="body-text">Awalnya kita pertama kali bertatap muka di sebuah kepanitiaan.</p>
+                        <div class="visual-wrapper glass-img-frame">
+                            <img id="timeline-img-1" src="assets/images/download.jpeg" alt="Kenangan kita - PKKMB" class="visual-img story-img" onerror="handleImageFallback(this, 'PKKMB')">
+                            <div class="img-gradient-overlay"></div>
+                        </div>
+                    </div>
+
+                    <!-- Story 02 -->
+                    <div class="story-block reveal glass-card timeline-card mt-7">
+                        <div class="card-badge">02 &mdash; PENDEKATAN</div>
+                        <h3 class="story-title heading-font">Mulai Dekat</h3>
+                        <p class="body-text">Entah sejak kapan, obrolan kita di setiap harinya mulai terasa semakin hangat dan berbeda.</p>
+                        <div class="visual-wrapper glass-img-frame">
+                            <img id="timeline-img-2" src="assets/images/download (1).jpeg" alt="Kenangan kita - Mulai Dekat" class="visual-img story-img" onerror="handleImageFallback(this, 'Mulai Dekat')">
+                            <div class="img-gradient-overlay"></div>
+                        </div>
+                    </div>
+
+                    <!-- Story 03 - CLIMAX -->
+                    <div class="story-block reveal climax-block glass-card golden-border mt-7 text-center">
+                        <div class="climax-sparkle">✦ ✦ ✦</div>
+                        <div class="card-badge gold-badge">03 &mdash; KITA</div>
+                        <div class="massive-date heading-font gradient-gold-text">
+                            28<br>08<br>2026
+                        </div>
+                        <p class="body-text climax-quote mt-3">Hari di mana semua keraguan hilang,<br>dan cerita ini resmi menjadi 'kita'.</p>
+                        <div class="climax-heart-pulse">💜</div>
+                    </div>
+
+                    <!-- Story 04 -->
+                    <div class="story-block reveal glass-card timeline-card mt-7">
+                        <div class="card-badge">04 &mdash; KENANGAN</div>
+                        <h3 class="story-title heading-font">Timbel & Curug</h3>
+                        <p class="body-text">Cerita manis kita di tempat sederhana, dan petualangan yang selalu ingin kuingat.</p>
+                        <div class="visual-wrapper glass-img-frame">
+                            <img id="timeline-img-4" src="assets/images/download (2).jpeg" alt="Kenangan kita - Curug Cibareubeuy" class="visual-img story-img" onerror="handleImageFallback(this, 'Curug')">
+                            <div class="img-gradient-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SESSION 2 BUTTON -->
+                <div class="session-2-btn-wrapper reveal text-center">
+                    <button class="primary-button btn-primary btn-glow" onclick="nextSection('polaroid-section')">
+                        <span>Lanjutkan Perjalanan</span> <span class="arrow">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. POLAROID -->
+        <section id="polaroid-section" class="section bg-glass-section">
+            <div class="container">
+                <div class="section-header text-center reveal mb-5">
+                    <span class="eyebrow-tag">FRAGMENTS OF LOVE</span>
+                    <h2 class="section-heading heading-font"><span class="gradient-text">Potongan Kecil Cerita Kita</span></h2>
+                    <p class="body-text text-muted">Setiap foto menyimpan sejuta tawa, canda, dan kehangatan.</p>
+                </div>
+                
+                <div class="polaroid-container reveal" id="polaroid-container">
+                    <!-- Injected via JS -->
+                </div>
+
+                <div class="session-2-btn-wrapper reveal text-center">
+                    <button class="primary-button btn-primary btn-glow" onclick="nextSection('elegant-gallery')">
+                        <span>Lihat Lebih Banyak</span> <span class="arrow">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. GALLERY -->
+        <section id="elegant-gallery" class="section">
+            <div class="container">
+                <div class="section-header text-center reveal mb-5">
+                    <span class="eyebrow-tag">MEMORY ARCHIVE</span>
+                    <h2 class="section-heading heading-font"><span class="gradient-text">Our Special Moments</span></h2>
+                    <p class="body-text text-muted">Klik pada foto untuk melihat momen lebih dekat 🔍</p>
+                </div>
+                
+                <div class="masonry-grid reveal" id="masonry-container">
+                    <!-- Injected via JS -->
+                </div>
+                
+                <div class="session-2-btn-wrapper reveal text-center">
+                    <button class="primary-button btn-primary btn-glow" onclick="nextSection('pre-quiz')">
+                        <span>Lanjutkan ke Quiz</span> <span class="arrow">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PRE-QUIZ TEASER -->
+        <section id="pre-quiz" class="section fullscreen bg-deep-glow text-white">
+            <div class="container text-center hero-wrapper">
+                <div class="quiz-orb-icon seq-prequiz">🔮</div>
+                <h2 class="hero-title heading-font seq-prequiz">
+                    Sekarang,<br><span class="gradient-text">Giliran Kamu!</span>
+                </h2>
+                <p class="body-text text-lavender seq-prequiz">
+                    Mari uji daya ingat kamu... Seberapa dalam kamu mengingat detail cerita perjalanan kita berdua?
+                </p>
+                <div class="seq-prequiz mt-5">
+                    <button class="primary-button btn-primary btn-glow" onclick="startQuiz()">
+                        <span>Mulai Quiz Kenangan</span> <span class="arrow">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. QUIZ INTERACTIVE -->
+        <section id="quiz" class="section bg-glass-section">
+            <div class="container quiz-wrapper">
+                <div class="quiz-card glass-card reveal">
+                    <div class="quiz-card-header mb-3">
+                        <div class="eyebrow-tag text-purple">QUESTION <span id="q-num-display">01</span></div>
+                        <div class="quiz-progress-text text-muted"><span id="q-current">1</span> / 8</div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="progress-bar-bg mb-4">
+                        <div class="progress-bar-fill" id="quiz-progress-fill"></div>
+                    </div>
+                    
+                    <h3 id="question-text" class="question-heading heading-font mb-4"></h3>
+                    
+                    <div id="options-container" class="options-container">
+                        <!-- Options via JS -->
+                    </div>
+                    
+                    <div class="mt-5">
+                        <button class="primary-button btn-primary btn-glow w-full" onclick="submitAnswer()">
+                            <span>Kirim Jawaban</span> <span class="arrow">&rarr;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. QUIZ RESULT -->
+        <section id="quiz-result" class="section fullscreen">
+            <div class="container text-center">
+                <div id="calculating-score" class="calculating-box glass-card">
+                    <div class="spinner-ring mb-3"></div>
+                    <h2 class="heading-font text-purple loading-pulse">Menghitung Hasil...</h2>
+                    <p class="body-text text-muted">Menganalisis tingkat ingatan kamu 💜</p>
+                </div>
+                
+                <div id="final-score-box" class="final-score-card glass-card hidden">
+                    <div class="eyebrow-tag mb-2">HASIL SEBERAPA KENAL KAMU WITH US</div>
+                    
+                    <div class="score-ring-wrapper">
+                        <div class="score-display heading-font text-deep">
+                            <span id="final-score">0</span><span class="score-total text-muted">/ 80</span>
+                        </div>
+                    </div>
+                    
+                    <p id="score-message" class="body-text mt-3"></p>
+                    
+                    <button class="primary-button btn-primary btn-glow mt-5" onclick="nextSection('cinematic-transition')">
+                        <span>Lanjutkan</span> <span class="arrow">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CINEMATIC TRANSITION -->
+        <section id="cinematic-transition" class="section fullscreen bg-deep-glow text-white">
+            <div class="container text-center hero-wrapper">
+                <p class="body-text text-lavender seq-cine mb-3">Tapi sebenarnya...</p>
+                <p class="body-text text-lavender seq-cine mb-3">Aku nggak membuat semua ini cuma untuk menguji kamu.</p>
+                <p class="body-text text-lavender seq-cine mb-3">Aku cuma ingin mengingatkan...</p>
+                <p class="body-text text-lavender seq-cine mb-5">bahwa kita sudah memiliki begitu banyak cerita indah.</p>
+                
+                <h2 class="hero-title heading-font italic seq-cine gradient-text">Dan ini baru awal perjalanan kita.</h2>
+                
+                <div class="seq-cine mt-6">
+                    <button class="primary-button btn-primary btn-glow" onclick="nextSection('video-intro')">
+                        <span>Buka Video Memory</span> <span class="arrow">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. VIDEO REKAP -->
+        <section id="video-intro" class="section fullscreen">
+            <div class="container text-center hero-wrapper">
+                <div class="eyebrow-tag text-purple seq-vid mb-3">ONE YEAR ANNIVERSARY</div>
+                <h1 class="hero-title heading-font seq-vid italic">
+                    <span class="gradient-text">With You.</span>
+                </h1>
+                <p class="body-text text-muted seq-vid mb-4">
+                    Saksikan video kilas balik perjalanan manis kita di Google Drive 💜
+                </p>
+                
+                <div class="seq-vid mt-3 mb-4">
+                    <a href="https://drive.google.com/file/d/1Y7QeuAbahhnyd_kLj7nD0B9-05JVI_zS/view?usp=drive_link" target="_blank" class="primary-button btn-primary btn-glow video-cta-btn">
+                        <span class="btn-icon">🎬</span> <span>Nonton Video di Google Drive</span> <span class="arrow">&rarr;</span>
+                    </a>
+                </div>
+                
+                <div class="seq-vid mt-4">
+                    <button class="btn-secondary text-purple glass-btn" onclick="nextSection('surat-penutup')">
+                        <span>Baca Surat Penutup</span> <span class="arrow">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. FINAL LETTER -->
+        <section id="surat-penutup" class="section">
+            <div class="container letter-wrapper">
+                <div class="letter-card glass-card luxury-letter">
+                    <div class="letter-stamp">💜 1 YEAR</div>
+                    <h2 class="section-heading heading-font text-deep mb-4">Untuk Sayangggg,</h2>
+                    
+                    <div class="letter-body text-dark body-text">
+                        <p class="mb-2">Kalau kamu sudah sampai di bagian ini, berarti kamu sudah menyelesaikan seluruh perjalanan kecil yang aku buatkan untukmu.</p>
+                        <p class="mb-2">Mungkin website ini sederhana, dan mungkin masih jauh dari kata sempurna.</p>
+                        <p class="mb-4">Tapi semua yang ada di dalamnya aku susun dengan sepenuh hati karena ada satu orang yang sangat ingin aku buat tersenyum bahagia. <strong>Kamu.</strong></p>
+                        
+                        <div class="letter-highlights glass-box p-4 my-4">
+                            <p class="mb-1">✨ Aku suka kamu yang selalu baik.</p>
+                            <p class="mb-1">✨ Aku suka kamu yang menggemaskan dan lucu.</p>
+                            <p class="mb-1">✨ Aku suka ketika kamu dengan antusias masakin aku makanan.</p>
+                            <p class="mb-0">✨ Aku bahkan suka saat kamu lagi cemberut atau marah, walau kadang bikin aku bingung harus ngapain 😭</p>
+                        </div>
+                        <p class="mb-4">Aku mencintai semua hal kecil tentang kamu yang mungkin tidak selalu kamu sadari.</p>
+                        
+                        <p class="mb-1">Kita mungkin masih memiliki banyak impian yang sedang kita perjuangkan.</p>
+                        <p class="mb-1">Rumah impian di Lembang. Tempat usaha impian kita. Cita-cita yang membentang di masa depan.</p>
+                        <p class="mb-4">Dan entah berapa ribu cerita lagi yang akan kita lukis bersama.</p>
+                        
+                        <p class="mb-2 text-center text-muted">Tapi dari semua pilihan di dunia ini...</p>
+                        <h3 class="romantic-quote-heading heading-font italic text-purple text-center my-4">
+                            "Aku ingin menjalani semuanya sama kamu."
+                        </h3>
+                        
+                        <p class="mb-2">Terima kasih sudah menjadi bagian terindah dari hidup aku.</p>
+                        <p class="mb-3">Dan terima kasih karena sekarang, cerita ini bukan lagi tentang aku atau kamu.</p>
+                        <h3 class="romantic-quote-heading heading-font italic text-purple text-center my-4">
+                            "Tapi tentang KITA."
+                        </h3>
+                        
+                        <p class="mt-4 text-purple font-semibold text-lg">Happy 1st Anniversary, Sayangggg! 💜</p>
+                    </div>
+
+                    <div class="letter-footer mt-5 flex-space-between">
+                        <div class="eyebrow-tag text-muted">28.08.2026</div>
+                        <div class="heading-font text-deep text-2xl italic signature-text">&mdash; Obieb</div>
+                    </div>
+                </div>
+                
+                <div class="session-2-btn-wrapper text-center mt-5">
+                    <button class="primary-button btn-primary btn-glow" onclick="nextSection('final-screen')">
+                        <span>Selesai</span> <span class="arrow">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. FINAL SCREEN -->
+        <section id="final-screen" class="section fullscreen bg-deep-glow text-white">
+            <div class="container text-center hero-wrapper">
+                <div class="heart-pulse-large mb-3">💖</div>
+                <h1 class="hero-title heading-font seq-final mb-4">
+                    I Love You,<br><span class="gradient-text">Sayangggg.</span>
+                </h1>
+                
+                <p class="body-text text-lavender seq-final mb-1">Semoga ini bukan cuma perayaan satu tahun.</p>
+                <p class="body-text text-lavender seq-final mb-5">Semoga ada puluhan tahun penuh kebahagiaan setelah ini.</p>
+                
+                <h2 class="heading-font text-3xl seq-final italic signature-final">&mdash; Obieb 💜</h2>
+                
+                <div class="seq-final mt-6">
+                    <button class="btn-secondary text-white glass-btn" onclick="location.reload()">
+                        <span>Mulai Perjalanan Lagi</span> ↻
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Admin Photo Upload Modal -->
+    <div id="admin-photo-modal" class="admin-modal-overlay">
+        <div class="admin-modal-box glass-modal">
+            <div class="admin-modal-header">
+                <div>
+                    <h2 class="heading-font admin-modal-title">📷 Pengaturan Foto Tersembunyi</h2>
+                    <p class="admin-modal-subtitle">Upload & kelola semua foto tanpa mengedit file kode!</p>
+                </div>
+                <button class="admin-modal-close" onclick="closeAdminModal()" aria-label="Tutup">&times;</button>
+            </div>
+
+            <!-- Tabs -->
+            <div class="admin-tabs">
+                <button id="tab-btn-batch" class="admin-tab-btn active" onclick="switchAdminTab('batch')">⚡ Upload Sekaligus</button>
+                <button id="tab-btn-timeline" class="admin-tab-btn" onclick="switchAdminTab('timeline')">📖 Foto Timeline</button>
+                <button id="tab-btn-polaroid" class="admin-tab-btn" onclick="switchAdminTab('polaroid')">🖼️ Polaroid</button>
+                <button id="tab-btn-gallery" class="admin-tab-btn" onclick="switchAdminTab('gallery')">✨ Galeri Grid</button>
+            </div>
+
+            <div class="admin-tab-content">
+                <!-- TAB 1: BATCH UPLOAD -->
+                <div id="admin-tab-batch" class="admin-tab-pane active">
+                    <div class="batch-upload-box">
+                        <div class="upload-dropzone glass-dropzone" onclick="document.getElementById('batch-file-input').click()">
+                            <span class="upload-icon">📁</span>
+                            <p class="upload-title">Klik atau Drag foto kamu di sini</p>
+                            <p class="upload-desc">Dukungan upload banyak foto sekaligus (JPG, PNG, WEBP, HEIC iPhone).</p>
+                            <input type="file" id="batch-file-input" multiple accept="image/*,.heic,.heif" class="hidden-file-input" onchange="handleBatchUpload(event)">
+                        </div>
+                    </div>
+                    <div id="batch-status-msg" class="batch-status-msg"></div>
+                    <div id="batch-preview-container" class="admin-preview-grid mt-3"></div>
+                </div>
+
+                <!-- TAB 2: TIMELINE -->
+                <div id="admin-tab-timeline" class="admin-tab-pane">
+                    <p class="admin-modal-subtitle mb-3">Ganti foto utama di bagian cerita timeline:</p>
+                    
+                    <div class="admin-form-group">
+                        <label class="admin-label">01 — Awal Mula (PKKMB)</label>
+                        <div class="admin-input-row">
+                            <div class="admin-img-preview-box"><img id="prev-timeline-1" src="assets/images/pkkmb-01.jpg" alt="Preview 01"></div>
+                            <input type="file" accept="image/*,.heic,.heif" class="admin-file-input" onchange="handleTimelineUpload(event, 1)">
+                        </div>
+                    </div>
+                    
+                    <div class="admin-form-group">
+                        <label class="admin-label">02 — Mulai Dekat</label>
+                        <div class="admin-input-row">
+                            <div class="admin-img-preview-box"><img id="prev-timeline-2" src="assets/images/pkkmb-02.jpg" alt="Preview 02"></div>
+                            <input type="file" accept="image/*,.heic,.heif" class="admin-file-input" onchange="handleTimelineUpload(event, 2)">
+                        </div>
+                    </div>
+                    
+                    <div class="admin-form-group">
+                        <label class="admin-label">04 — Kenangan (Curug / Timbel)</label>
+                        <div class="admin-input-row">
+                            <div class="admin-img-preview-box"><img id="prev-timeline-4" src="assets/images/curug.jpg" alt="Preview 04"></div>
+                            <input type="file" accept="image/*,.heic,.heif" class="admin-file-input" onchange="handleTimelineUpload(event, 4)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: POLAROID -->
+                <div id="admin-tab-polaroid" class="admin-tab-pane">
+                    <div class="flex-space-between mb-3 align-center">
+                        <p class="admin-modal-subtitle">Ganti / tambah foto polaroid beserta teks captionnya:</p>
+                        <button class="btn-secondary btn-sm" onclick="addPolaroidSlot()">+ Tambah Polaroid</button>
+                    </div>
+                    <div id="admin-polaroid-list" class="admin-item-list"></div>
+                </div>
+
+                <!-- TAB 4: GALLERY -->
+                <div id="admin-tab-gallery" class="admin-tab-pane">
+                    <div class="flex-space-between mb-3 align-center">
+                        <p class="admin-modal-subtitle">Ganti / tambah foto galeri grid:</p>
+                        <button class="btn-secondary btn-sm" onclick="addGallerySlot()">+ Tambah Foto Galeri</button>
+                    </div>
+                    <div id="admin-gallery-list" class="admin-item-list"></div>
+                </div>
+            </div>
+
+            <!-- Footer Actions -->
+            <div class="admin-modal-footer">
+                <div class="admin-footer-left">
+                    <button class="btn-danger-link" onclick="resetToDefaultPhotos()">↻ Reset Foto</button>
+                    <button class="btn-secondary btn-sm" onclick="exportPhotosConfig()" title="Download file konfigurasi foto">📥 Ekspor</button>
+                    <button class="btn-secondary btn-sm" onclick="document.getElementById('import-config-input').click()" title="Impor file konfigurasi">📤 Impor</button>
+                    <input type="file" id="import-config-input" accept=".json" class="hidden-file-input" onchange="importPhotosConfig(event)">
+                </div>
+                <div class="admin-footer-btns">
+                    <button class="btn-secondary" onclick="closeAdminModal()">Batal</button>
+                    <button class="primary-button btn-primary" onclick="saveAllPhotosConfig()">Simpan & Terapkan ✨</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fallback Template for Images -->
+    <template id="fallback-template">
+        <div class="img-fallback glass-fallback">
+            <div class="fallback-heart">♡</div>
+            <div class="fallback-text">Kenangan kita</div>
+        </div>
+    </template>
+
+    <!-- HEIC Image Converter for iPhone photos -->
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
